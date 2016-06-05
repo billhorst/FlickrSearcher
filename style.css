@@ -113,11 +113,18 @@ body {
 	transition:0.5s linear all;
 }
 
+.resultLimit {
+	height: 30px;
+	width: 60px;
+	font-size: 18pt;
+	padding-left: 15px;
+}
+
 /*--------------------------------
 animations
 --------------------------------*/
 
 .imageDisplay:hover {
-    width: 220px;
-    height: 220px;
+	width: 220px;
+	height: 220px;
 }

@@ -15,12 +15,13 @@
 		</section>
 		<div class="formSection" ng-controller="MyController">
 			<form class="searchForm" ng-submit="searchFlickr(keyword)">
+				<span style="font-size: 24pt">Show<input class="resultLimit" type="number" ng-model="numberOfResults" />results for:</span>
 				<input class="textInput" type="text" name="keyword" ng-model="keyword" required/>
 				<input class="inputButton" type="submit" value="Submit" id="submit" />
 			</form>
 			<h2 ng-if="submitted" class="submitted">Searching Flickr for photos with keyword "{{ keyword }}".</h2>
 			<div class="results" ng-if="results">
-				<h2>We found {{ results.length }} results for "{{ oldKeyword }}"</h2>
+				<h2>Showing {{ results.length }} results for "{{ oldKeyword }}"</h2>
 				<div class="imageDisplay" ng-animate="'animate'" ng-repeat="result in results">
 					<img class="imageDisplay" ng-src="https://farm{{result.farm}}.staticflickr.com/{{result.server}}/{{result.id}}_{{result.secret}}.jpg" width="200" height="180"></img>
 				</div>

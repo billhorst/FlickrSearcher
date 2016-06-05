@@ -16,6 +16,7 @@ angular.module('flickrSearcher', ['ngAnimate'])
 })
 .controller('MyController', function($scope, $http, $sce) {
 	
+	$scope.numberOfResults = 15;
 	$scope.submitted = false;
 
 	$scope.searchFlickr = function(keyword) {
@@ -27,7 +28,7 @@ angular.module('flickrSearcher', ['ngAnimate'])
 		var url = "https://api.flickr.com/services/rest";
 		var request = {
 			api_key: "9a5dfe2de5e497078ad0c01879ea9d1a",
-			per_page: 10,
+			per_page: $scope.numberOfResults,
 			method: "flickr.photos.search",
 			text: keyword,
 			format: "json",
